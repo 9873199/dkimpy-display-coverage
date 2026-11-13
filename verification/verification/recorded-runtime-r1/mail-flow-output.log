@@ -1,0 +1,6 @@
+simple-whole-body: [(0, True, [1, 3, 2])]
+simple-unsigned-body-tail: [(0, False, [1, 3, 2])]
+weak-before-strong: [(0, False, [2]), (1, True, [2, 4, 3])]
+Custom required header Subject: [{'index': 0, 'passed': False, 'domain': 'example.invalid', 'selector': 'local', 'covered': [1, 3, 2], 'reasons': ['display policy rejected: From header field must occur exactly once, found 0 instance(s)']}]
+Declared l=999, cryptographic check: True
+Display decision: [{'index': 0, 'passed': True, 'domain': 'example.invalid', 'selector': 'local', 'covered': [1, 3, 2], 'reasons': ['signature valid and all required header instances and the complete body are covered']}]

@@ -1,0 +1,98 @@
+{
+  "uid": 1745,
+  "run_id": "uf-20261112-new15-dkim",
+  "reviewed": true,
+  "reviewer": "Codex primary reviewer",
+  "frozen_trace_sha256": "a5b1fced0cdc6b534f53adcbe358a629dc5c6b40799101007cf1b5b2e562d98e",
+  "revision": "acceptance-r2",
+  "product_modules": [
+    "dkim"
+  ],
+  "support_files": [
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\dkim-api-r1.py",
+      "path": "dkim_api.py",
+      "sha256": "033731f0421255347e12b58c0b6780edbdb5605e3a47a38517924a7b15c7e4cb"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\dkim-display-fixtures.py",
+      "path": "dkim-display-fixtures.py",
+      "sha256": "ef22b7262d88da1dd5fc74b583a9c364a49d1e1fb178c1d8411101ec24690069"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\dkim-independent-tests.py",
+      "path": "test_dkim_contract.py",
+      "sha256": "2a4bb1b85a44eeec2bee8e77822db93d3301690fb9796d534b8bf8f38261604e"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\dkim-extra-contract-r2.py",
+      "path": "test_dkim_exact_contract.py",
+      "sha256": "55c22ce3fb552f195b3d9e127ce0756cfc33768ffabf39c399c5dca31d8968a7"
+    }
+  ],
+  "commands": [
+    {
+      "name": "display-contract",
+      "argv": [
+        "{python}",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--tb=short",
+        "{verification}/test_dkim_contract.py",
+        "{verification}/test_dkim_exact_contract.py",
+        "--basetemp",
+        "{verification}/tmp-display"
+      ]
+    },
+    {
+      "name": "model-feature",
+      "argv": [
+        "{python}",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--tb=short",
+        "dkim/tests/test_dkim_display.py",
+        "--basetemp",
+        "{verification}/tmp-feature"
+      ]
+    },
+    {
+      "name": "offline-package",
+      "argv": [
+        "{python}",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--tb=short",
+        "dkim/tests",
+        "--basetemp",
+        "{verification}/tmp-package"
+      ]
+    },
+    {
+      "name": "exact-length-observation",
+      "argv": [
+        "{python}",
+        "-B",
+        "{verification}/test_dkim_exact_contract.py"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "time": "2026-11-13T17:40:42+08:00",
+  "reviewer": "Codex primary agent, AI-assisted",
+  "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\dkim-extra-contract-r1.py",
+  "corrected": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\dkim-extra-contract-r2.py",
+  "retained_original_output": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\display-contract.stdout.log",
+  "reason": "The observation re-signer omitted the CRLF separator after replacing b=. Its cryptographic control correctly failed before the display assertion. Add the signature-header separator in a new helper revision; retain first output as invalid fixture for this one case, no model penalty. Other two subset assertions had valid cryptographic controls.",
+  "model_source_changes": false,
+  "model_penalty_for_fixture_error": false
+}

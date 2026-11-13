@@ -1,0 +1,16 @@
+全部完成，所有测试通过（原有 121 个测试无回归，新增 21 个测试全绿）。
+
+## 改动内容
+
+**`dkim/__init__.py`** — 布尔接口 `verify()` 一字未动，新增严格展示层验证：
+
+- **`select_headers_with_indices()`**：在原 `select_headers` 的 RFC 6376 自底向上选择逻辑上，额外返回每个被选头在**原始邮件头列表中的下标**（0 起、从上往下、按摘要顺序）。`h=` 中没有实际实例的 oversigning 项匹配不到任何东西，因此不可能伪造出"覆盖"下标。`select_headers()` 变为其薄封装，签名路径行为不变。
+- **`hash_headers()`** 现在返回 `(头实例, 下标)`；`verify_sig()` 记录 `signed_header_indices`、`canonical_body_length`（完整规范化正文长度）和 `signed_body_length`（实际进摘要的长度，仅 `l=` 存在时可能更短）。
+- **`DKIM.verify_for_display(required_headers=(b'from', b'subject', b'to'), dnsfunc=...)`** 与模块级同名函数：逐枚签名独立验证，每枚返回一个结果字典：
+  - `result`、`signature_index`、`domain`(d=)、`selector`(s=)、`signed_header_indices`、`reason`、`cryptographic_result`、`body_fully_covered`
+  - 严格规则：From 恰好一处；每个必需头至少存在一处，且该名称的**所有现存实例**都被选入摘要（策略判断直接从 `h=` 与原始头重算，不信任残留的 `signed_headers`）；`l=` 只有恰好覆盖全部规范化正文才通过，签名前缀加未签尾巴一律拒绝；正文覆盖按真实 simple/relaxed canonicalization 计算。
+  - 每枚签名验证前重置实例状态，前一枚弱签名/失败签名的残留不能给后一枚背书；畸形 tag 值按原 `verify()` 的方式转成 `MessageFormatError` 并隔离到该枚结果。不做 DMARC/信誉判断。
+
+**`dkim/tests/test_dkim_display.py`（新增，21 个测试）** — 用 `cryptography` 本机生成 2048 位 RSA 密钥，DNS 回调只认内存表、查到表外域名即测试失败，零公网访问。覆盖：同名多头、`h=` 重复选择、合法/不存在的 oversigning、双 From、必需头缺失、大小写（bytes/str）、`l=` 全覆盖与追加正文尾巴、relaxed 空白规范化、simple/relaxed 四种组合、弱签名+强签名双签、坏签名不连累好签名、畸形签名隔离、原邮件字节不变，并同时比对密码学结论、选中下标与展示策略结论。
+
+端到端验证了核心差异：一封 `verify()` 返回 `True` 的邮件（漏签第二个 To + `l=` 前缀后追加正文），`verify_for_display` 正确拒绝并给出具体原因 `not every existing instance of header b'to' is signed ...` 和 `body_fully_covered=False`。

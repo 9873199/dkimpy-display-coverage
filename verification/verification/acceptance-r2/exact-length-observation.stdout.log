@@ -1,0 +1,1 @@
+{'ordinary_signature_valid': True, 'declared_l': 999, 'strict_result': [{'index': 0, 'passed': True, 'domain': 'example.invalid', 'selector': 'local', 'covered': [1, 3, 2], 'reasons': ['signature valid and all required header instances and the complete body are covered']}]}

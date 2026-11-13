@@ -1,0 +1,318 @@
+{
+  "time": "2026-11-13T17:37:12+08:00",
+  "task_id": "uf-20261112-new15-dkim",
+  "run_id": "uf-20261112-new15-dkim",
+  "uid": 1745,
+  "workspace": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\sources\\dkim",
+  "artifact_directory": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\frozen-artifact",
+  "git_head_after_model": "2c6df2b8d05a66d1eb8378c139f3d2ed815d3670",
+  "initial_sha": "2c6df2b8d05a66d1eb8378c139f3d2ed815d3670",
+  "trajectory_file": "D:\\hc\\userFeedback\\cache\\runs\\uf-20261112-new15-dkim\\frozen\\trajectory-original.jsonl",
+  "trajectory_sha256": "a5b1fced0cdc6b534f53adcbe358a629dc5c6b40799101007cf1b5b2e562d98e",
+  "session_ids": [
+    "2a3ffe7d-51b9-40e8-9f62-9b4d0ab19943"
+  ],
+  "prompt_ids": [
+    "e5fabb84-d179-4fe7-a446-f0634fb273a9"
+  ],
+  "user_turns": 1,
+  "prompt_sha256": "82126c458f1ac74866f7e385b7edb429654c5b39fa02f3e23c30d973bde992de",
+  "frozen_files": [
+    {
+      "path": ".bzrignore",
+      "sha256": "60c97f668bdeb761d5357c859103ebd27b0bf5f7d4ef5a8b6e753247a47c3b35",
+      "bytes": 17
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "c69f7911fb11b223608bc2b55e596c0e8ac9fd3203de1d87f811dc6d7e489e08",
+      "bytes": 91
+    },
+    {
+      "path": ".testr.conf",
+      "sha256": "8852cfe350efb915f3213390702747e7fcf613417c83b0baadb52725791ac859",
+      "bytes": 158
+    },
+    {
+      "path": ".travis.yml",
+      "sha256": "1b2fdaddefec85d61bbe60f7d620e5f8f4701b408f51b2819cbb385f158d844d",
+      "bytes": 269
+    },
+    {
+      "path": "ChangeLog",
+      "sha256": "8f3bbc6f2b553ff607418ab799c1e37f33a65cd0004a30ef275e30f45bf6017d",
+      "bytes": 10456
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "c047360d48ec9a45c4d70dca260c1a0d4806d521be3aee4b4300106d2b2618fe",
+      "bytes": 979
+    },
+    {
+      "path": "MANIFEST.in",
+      "sha256": "8bc347d423a385024602129322cd5c260bc4e15e96251d117b45f9890e1d126c",
+      "bytes": 161
+    },
+    {
+      "path": "README",
+      "sha256": "6b8c2925c0138c74e17f1f7222c0e200b054f2f7bcbf3cc5e4fce0f74b22ad69",
+      "bytes": 5691
+    },
+    {
+      "path": "dkim/__init__.py",
+      "sha256": "3743fc9fb1ceef0202b039431fd3b9d8d85b32664b8b4539087440d386ad0ddc",
+      "bytes": 65626
+    },
+    {
+      "path": "dkim/__main__.py",
+      "sha256": "54ab9950fccfa74c18dc3dd7b8b2984d2a2e0d79ab998bd28b98f56b8c6d7f0e",
+      "bytes": 139
+    },
+    {
+      "path": "dkim/arcsign.py",
+      "sha256": "fdf6f63c9535cac83d40037654d6534ded73f532a52ecdd8b9fcb955cd009752",
+      "bytes": 2570
+    },
+    {
+      "path": "dkim/arcverify.py",
+      "sha256": "cf9b0754733804f62aaf761ab83a91d1903e8d631bd3ce151d966852eea36f1e",
+      "bytes": 1774
+    },
+    {
+      "path": "dkim/asn1.py",
+      "sha256": "44ab840b9b01b3c3eaefacf471f80f77486e3b191ebd3b9d05c13fd9f6cad8fe",
+      "bytes": 4185
+    },
+    {
+      "path": "dkim/canonicalization.py",
+      "sha256": "0152de3bedbcf33a964eff70cbcb2524d27629d0a98c79c818fcd174344e5d10",
+      "bytes": 4610
+    },
+    {
+      "path": "dkim/crypto.py",
+      "sha256": "2e17bfed6ecbf0d1c04cfd88af5781fdf19d60a614cfbb97bafefb46c0d6b82e",
+      "bytes": 7479
+    },
+    {
+      "path": "dkim/dkimsign.py",
+      "sha256": "7bffcb5465f0cfa14280b9dcbf0f022086c9132c6d474c8cef489dda1d84dd21",
+      "bytes": 3628
+    },
+    {
+      "path": "dkim/dkimverify.py",
+      "sha256": "4651b4afff30e4318cebb6b70546a3cf5fdafafd34cb54471f905a25a2b6035e",
+      "bytes": 1598
+    },
+    {
+      "path": "dkim/dknewkey.py",
+      "sha256": "2a691713085c89f3c22378e04a4d2ca632cdc3fb6c5cd848aa394a7176f2d2e2",
+      "bytes": 4307
+    },
+    {
+      "path": "dkim/dnsplug.py",
+      "sha256": "0328d8417668560a5b141ac094f8d99e8ba17a0748ac3f00776d4c82e82d11ac",
+      "bytes": 2831
+    },
+    {
+      "path": "dkim/tests/__init__.py",
+      "sha256": "10dbff6119afbcb9a36684ed976cd35b8fb293cddfafccea90a58c7ec9ad1d05",
+      "bytes": 1705
+    },
+    {
+      "path": "dkim/tests/data/badk.txt",
+      "sha256": "569bc71d60d321406b62d784486f103dc5385e6f42ee55f03b1899b430876d22",
+      "bytes": 251
+    },
+    {
+      "path": "dkim/tests/data/badversion.txt",
+      "sha256": "db9898e74b0215d7905dcd161ab89dd93ff702a66907a433ec6ee373b0e441a7",
+      "bytes": 240
+    },
+    {
+      "path": "dkim/tests/data/ed25519test.dns",
+      "sha256": "0ffd62521017b585aa1e5c14e87e97e9e774eeb85decb0ae4f354c380f18f71a",
+      "bytes": 58
+    },
+    {
+      "path": "dkim/tests/data/ed25519test.key",
+      "sha256": "5bc7905727ee039fb2d02c1d7cb88d3640f5adf47076a9305b52e51c811361ee",
+      "bytes": 45
+    },
+    {
+      "path": "dkim/tests/data/ed25519test.msg",
+      "sha256": "08a688cecf4d1461d6380fb1652ab97cb1c00cd7dc8f5626852fb80084ac1161",
+      "bytes": 346
+    },
+    {
+      "path": "dkim/tests/data/ed25519test2.msg",
+      "sha256": "f5840641b8f69bac7e6b4dc38d97bd93d63c00f6e3a834dfcfd80d753fc6319e",
+      "bytes": 588
+    },
+    {
+      "path": "dkim/tests/data/eximtest.dns",
+      "sha256": "64466dc72408e887d1e536f55215d782b828cc55fbb6e34075ceea33343ac7a1",
+      "bytes": 67
+    },
+    {
+      "path": "dkim/tests/data/message.mbox",
+      "sha256": "82e5fad1c94ff80fa955c233cfebafd433609021677c3790400b7f82bc788598",
+      "bytes": 4444
+    },
+    {
+      "path": "dkim/tests/data/rfc6376.msg",
+      "sha256": "9741fa4fdbf9e155ae4e14d63613768593c45490b359f2b64d1381a9dc71a168",
+      "bytes": 269
+    },
+    {
+      "path": "dkim/tests/data/rfc6376.signed.msg",
+      "sha256": "0c3ac4e66d32b709906abadb4f97a069fb43bc26b6310ed07d18bda552f05459",
+      "bytes": 1069
+    },
+    {
+      "path": "dkim/tests/data/rfc8032_7_1.key",
+      "sha256": "236e703a66980918c81ffe8ca04a236eb52f812e1346b5730f7983aaddb46f51",
+      "bytes": 45
+    },
+    {
+      "path": "dkim/tests/data/test.message",
+      "sha256": "08a688cecf4d1461d6380fb1652ab97cb1c00cd7dc8f5626852fb80084ac1161",
+      "bytes": 346
+    },
+    {
+      "path": "dkim/tests/data/test.private",
+      "sha256": "dfa37fe8b5fc32257e2ed04648bdd077f05c69c985b9da06e9e9cc7e60d55dbe",
+      "bytes": 887
+    },
+    {
+      "path": "dkim/tests/data/test.txt",
+      "sha256": "0f9bbe09a532646417d0290f2b31fda6df0fb071ca5e352c917e7e38fdc15ba7",
+      "bytes": 240
+    },
+    {
+      "path": "dkim/tests/data/test2.message",
+      "sha256": "59a037e6ab1507c046b4fd359159ed82fa4e076f0d87aff34ae8fa74290a6c0a",
+      "bytes": 1104
+    },
+    {
+      "path": "dkim/tests/data/test2.private",
+      "sha256": "dfa37fe8b5fc32257e2ed04648bdd077f05c69c985b9da06e9e9cc7e60d55dbe",
+      "bytes": 887
+    },
+    {
+      "path": "dkim/tests/data/test2.txt",
+      "sha256": "bf2c1d1a28c176ca2bd1c0538021be40856e70dc82a471aba080ca47f6cd5e5c",
+      "bytes": 233
+    },
+    {
+      "path": "dkim/tests/data/test_bad.txt",
+      "sha256": "c593a08f705881f066fe50fc5a9376d97279e662d71e8eb059b24f65f28d77fa",
+      "bytes": 240
+    },
+    {
+      "path": "dkim/tests/data/test_extra.message",
+      "sha256": "05699d6a04dc85410c4214d6fd4420a8a9351a44bc3e2daf6a7afdf60a2ac687",
+      "bytes": 219
+    },
+    {
+      "path": "dkim/tests/data/test_nofrom.message",
+      "sha256": "9dc2104d96591d5bc809f30f71196d0df0401cbd7fff1d7a7c70d8f94f01b5f6",
+      "bytes": 164
+    },
+    {
+      "path": "dkim/tests/data/test_tlsrpt.txt",
+      "sha256": "3110c6d51113cfb36968efe0d3e70223571d5b9783ff23c7342615ebf12b9c0e",
+      "bytes": 250
+    },
+    {
+      "path": "dkim/tests/test_arc.py",
+      "sha256": "3fed7a3ed30a67a7d8dfed51abf23f5ab7c2870bbd8e2dabee1ca557c62e3158",
+      "bytes": 5300
+    },
+    {
+      "path": "dkim/tests/test_canonicalization.py",
+      "sha256": "97e28f2b4a744f28322674810e9a8a807a911500928a1d21ddab0e38792a5150",
+      "bytes": 6045
+    },
+    {
+      "path": "dkim/tests/test_crypto.py",
+      "sha256": "44bb9001d226f45dd0906b2869c0550508b497ff45b6283cfbbc71ae644dd810",
+      "bytes": 6786
+    },
+    {
+      "path": "dkim/tests/test_dkim.py",
+      "sha256": "1419ffcaf420a39a0efafa1d2002c791f31345bc3b79171ccc9ad51ad9dfc339",
+      "bytes": 20343
+    },
+    {
+      "path": "dkim/tests/test_dkim_display.py",
+      "sha256": "93fca665fe6999249103fa819050b5fabbaf4559637626ac1d8f9a3e643585b6",
+      "bytes": 19822
+    },
+    {
+      "path": "dkim/tests/test_dkim_ed25519.py",
+      "sha256": "019b2ae967d5fe3a935e7826b634a751e32e3e53ab29fb799f26e360f4fd340c",
+      "bytes": 12866
+    },
+    {
+      "path": "dkim/tests/test_dkim_tlsrpt.py",
+      "sha256": "c2c6babf91cecbcd509d48a9c88a4e8de772fba09dbdee99191c49d90edb1be9",
+      "bytes": 11980
+    },
+    {
+      "path": "dkim/tests/test_dnsplug.py",
+      "sha256": "6131ded480b9dea889d207b748bf0d1d3c9a35d7b406070a41122fb908c957c0",
+      "bytes": 1284
+    },
+    {
+      "path": "dkim/tests/test_util.py",
+      "sha256": "dd5cb585bc2bdf69522f7a7c9e2b0b965264c684b6e6306dbf380608adcbea37",
+      "bytes": 3432
+    },
+    {
+      "path": "dkim/util.py",
+      "sha256": "f121219a0b4a4d1f9aa19614ddef3acc103c679d818d81ddb6a07ff79ed9d025",
+      "bytes": 2501
+    },
+    {
+      "path": "man/arcsign.1",
+      "sha256": "d7003926e8a8b6da7e1d815bc2d8f568053adcd3ea5fbed743b4e11cb360cf51",
+      "bytes": 4392
+    },
+    {
+      "path": "man/arcverify.1",
+      "sha256": "9067243f84cd4aa44f1becf37054298352fe36b3f3667a2ee79f7ac60a5c2dcb",
+      "bytes": 4152
+    },
+    {
+      "path": "man/dkimsign.1",
+      "sha256": "5a918eac793498faaeb6c41a2b6d38979e64f9a2f2ec46f423228dd0c17fd71d",
+      "bytes": 4957
+    },
+    {
+      "path": "man/dkimverify.1",
+      "sha256": "9f110d1b731960e000bfbd5e1c54a5fa31856205fb189787b798347b67ac5245",
+      "bytes": 4072
+    },
+    {
+      "path": "man/dknewkey.1",
+      "sha256": "cf488cffd78051f334643469bf379520d74fbdd6ec70b29a7abe82f802647a92",
+      "bytes": 4923
+    },
+    {
+      "path": "packaging/pydkim.spec",
+      "sha256": "5f718f96676119a95ca82e804421e7acd7cd414e0c6e5afc155ee6aa2a48a822",
+      "bytes": 2755
+    },
+    {
+      "path": "setup.py",
+      "sha256": "43f59a1d6270f15fce5167ceb1802e6b7e305bf875c1b0c294824162b4f64418",
+      "bytes": 3411
+    },
+    {
+      "path": "test.py",
+      "sha256": "bbfa52417d5990d45388c0e081092d69d1224ef4a0b2b48749186a07179fa868",
+      "bytes": 268
+    }
+  ],
+  "no_postrun_product_changes": true
+}

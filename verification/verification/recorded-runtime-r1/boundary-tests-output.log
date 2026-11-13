@@ -1,0 +1,25 @@
+FFF                                                                      [100%]
+================================== FAILURES ===================================
+________________ test_declared_larger_l_is_not_exact_coverage _________________
+..\test_dkim_exact_contract.py:30: in test_declared_larger_l_is_not_exact_coverage
+    assert len(result)==1 and not result[0]['passed'],'l=999 exceeds full canonical body and must fail exact-l display policy'
+E   AssertionError: l=999 exceeds full canonical body and must fail exact-l display policy
+E   assert (1 == 1 and not True)
+E    +  where 1 = len([{'index': 0, 'passed': True, 'domain': 'example.invalid', 'selector': 'local', ...}])
+__ test_from_exactly_once_is_independent_of_custom_required_names[required0] __
+..\test_dkim_exact_contract.py:37: in test_from_exactly_once_is_independent_of_custom_required_names
+    assert len(result)==1 and result[0]['passed'],'Actual From exists exactly once even when required list names only display-specific fields'
+E   AssertionError: Actual From exists exactly once even when required list names only display-specific fields
+E   assert (1 == 1 and False)
+E    +  where 1 = len([{'index': 0, 'passed': False, 'domain': 'example.invalid', 'selector': 'local', ...}])
+__ test_from_exactly_once_is_independent_of_custom_required_names[required1] __
+..\test_dkim_exact_contract.py:37: in test_from_exactly_once_is_independent_of_custom_required_names
+    assert len(result)==1 and result[0]['passed'],'Actual From exists exactly once even when required list names only display-specific fields'
+E   AssertionError: Actual From exists exactly once even when required list names only display-specific fields
+E   assert (1 == 1 and False)
+E    +  where 1 = len([{'index': 0, 'passed': False, 'domain': 'example.invalid', 'selector': 'local', ...}])
+=========================== short test summary info ===========================
+FAILED ..\test_dkim_exact_contract.py::test_declared_larger_l_is_not_exact_coverage
+FAILED ..\test_dkim_exact_contract.py::test_from_exactly_once_is_independent_of_custom_required_names[required0]
+FAILED ..\test_dkim_exact_contract.py::test_from_exactly_once_is_independent_of_custom_required_names[required1]
+3 failed in 0.93s

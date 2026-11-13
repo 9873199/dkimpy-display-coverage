@@ -1,0 +1,31 @@
+{
+  "time": "2026-11-13T17:45:46+08:00",
+  "uid": 1745,
+  "container": false,
+  "actual": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\dkim\\env\\Scripts\\python.exe",
+    "modules": {
+      "dkim": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\replay-source\\dkim\\__init__.py"
+    }
+  },
+  "dependency_lock": "authres==1.2.0\ncffi==2.1.1\ncolorama==0.4.6\ncryptography==50.0.2\n-e git+https://github.com/kitterma/dkimpy-mirror.git@2c6df2b8d05a66d1eb8378c139f3d2ed815d3670#egg=dkimpy\ndnspython==2.9.2\niniconfig==2.3.1\npackaging==26.3\npluggy==1.7.0\npycparser==3.12\nPygments==2.21.0\nPyNaCl==1.6.2\npytest==9.2.0\n",
+  "dependency_environment": "Reused the task dependency environment; exact pip freeze retained",
+  "frozen_source_import_verified": true,
+  "external_runtime_services": [],
+  "environment_limits": [
+    "Reused task dependency environment with frozen import path and pip freeze recorded.",
+    "Only local generated signing keys and memory DNS, no public DNS validation."
+  ],
+  "task_preparation": {
+    "time": "2026-11-12T21:37:14+08:00",
+    "slug": "dkim",
+    "status": "ENV_READY",
+    "python": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\dkim\\env\\Scripts\\python.exe",
+    "source_path": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\sources\\dkim",
+    "baseline_evidence": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\dkim\\preparation-r1\\baseline.json",
+    "dependency_lock": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\dkim\\preparation-r1\\dependency-lock.stdout.log",
+    "baseline_scope": "Selected offline upstream regressions or explicit real library smoke. Full upstream suite not claimed.",
+    "cache_only": true
+  }
+}

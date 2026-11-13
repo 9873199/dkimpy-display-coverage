@@ -1,0 +1,19 @@
+{
+  "independent": {
+    "passed": 16,
+    "failed": 3,
+    "root_causes": 2
+  },
+  "model_feature_collected": {
+    "passed": 22,
+    "test_methods": 21,
+    "helper_collected": 1,
+    "warnings": 1
+  },
+  "package_collected": {
+    "passed": 130,
+    "warnings": 9
+  },
+  "overlapping_counts_not_summed": true,
+  "initial_fixture_error_excluded": true
+}

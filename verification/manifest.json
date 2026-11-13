@@ -1,0 +1,333 @@
+{
+  "created": "2026-11-13T17:45:46+08:00",
+  "reviewed": true,
+  "reviewer": "Codex primary agent, AI-assisted",
+  "uid": 1745,
+  "frozen_commit": "c08fe7de0ce9d1bdc0addb92e6f8de9ff9465ac4",
+  "native_trajectory_sha256": "a5b1fced0cdc6b534f53adcbe358a629dc5c6b40799101007cf1b5b2e562d98e",
+  "files": [
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\freeze.json",
+      "path": "freeze.json",
+      "sha256": "0c6919d4c98426d42a707ea6abd314ad9b1141e26697f02fa54641642c6669da"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\freeze-audit.json",
+      "path": "freeze-audit.json",
+      "sha256": "09e6a5d35091debf5af89279d59a872dcc33478daa90e30591482c11b46141e1"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\environment-reviewed.json",
+      "path": "environment-reviewed.json",
+      "sha256": "c7c85369e9e38e0eb99a3209d2eeadce5700d4c9ae02cf753ef7f0ea9ee8ce57"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\evidence-map.json",
+      "path": "evidence-map.json",
+      "sha256": "b7cc1b683f3d9b3231d641c72947e80ad800054d9e00dc6f8e4f12ab7eda5f01"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\model-final-answer.txt",
+      "path": "model-final-answer.txt",
+      "sha256": "658bfd2eb13a0d940edbdc02c7cc20ec1c199e78cbfc99827e041d3c257a6d97"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\test-results.json",
+      "path": "test-results.json",
+      "sha256": "961ebe51793a5b970873b555f2577f60730141667877067fb331652c3ae1fde9"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\evaluation-qc.json",
+      "path": "evaluation-qc.json",
+      "sha256": "f1a810524fc98ae50247f7bdf14b00168e9694aad4f56733ed06631cff9f7e28"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\actual-import.json",
+      "path": "verification/acceptance-r1/actual-import.json",
+      "sha256": "29134ce21082f5c060c139c8f76ab6f1e89a7ae7539a444686e5c6f4c89bbe4d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\actual-import.stderr.log",
+      "path": "verification/acceptance-r1/actual-import.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\actual-import.stdout.log",
+      "path": "verification/acceptance-r1/actual-import.stdout.log",
+      "sha256": "6258d30f1dec3f0bbd4aad179daab3a83b4a0706b0e1e9c4bb264540c197d8a2"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\dependency-lock.json",
+      "path": "verification/acceptance-r1/dependency-lock.json",
+      "sha256": "6406ca9fb8fd9005fc678fb8d751df08c685e3a2c2b0e78c8c34a4a35b960499"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\dependency-lock.stderr.log",
+      "path": "verification/acceptance-r1/dependency-lock.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\dependency-lock.stdout.log",
+      "path": "verification/acceptance-r1/dependency-lock.stdout.log",
+      "sha256": "dd89a426e04c417e6f08e8046d087c2db03515c62b7ff3d16619c1148cbe7afd"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\display-contract.json",
+      "path": "verification/acceptance-r1/display-contract.json",
+      "sha256": "35d4ad4c92c7f2cc0d13bc37fdcecda1bc615fc52ee36a0078bd24ff9e1c9b1d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\display-contract.stderr.log",
+      "path": "verification/acceptance-r1/display-contract.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\display-contract.stdout.log",
+      "path": "verification/acceptance-r1/display-contract.stdout.log",
+      "sha256": "ef3382e86777451d0cd4d5e09688eed270f1de043c646cfff56f59b279b5e211"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\dkim-display-fixtures.py",
+      "path": "verification/acceptance-r1/dkim-display-fixtures.py",
+      "sha256": "ef22b7262d88da1dd5fc74b583a9c364a49d1e1fb178c1d8411101ec24690069"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\dkim_api.py",
+      "path": "verification/acceptance-r1/dkim_api.py",
+      "sha256": "033731f0421255347e12b58c0b6780edbdb5605e3a47a38517924a7b15c7e4cb"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\exact-length-observation.json",
+      "path": "verification/acceptance-r1/exact-length-observation.json",
+      "sha256": "1eadb185445ba188f5a34425a8e432fab7b138ce8dc184d3294046909b4e96d1"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\exact-length-observation.stderr.log",
+      "path": "verification/acceptance-r1/exact-length-observation.stderr.log",
+      "sha256": "fd8c5e7bf1da23675b84eec35a95a219949af3f12c9a05776ed74dad9660dd2a"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\exact-length-observation.stdout.log",
+      "path": "verification/acceptance-r1/exact-length-observation.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\model-feature.json",
+      "path": "verification/acceptance-r1/model-feature.json",
+      "sha256": "e431d9ee82d389a3e6e13167e6c16d7eeb8027b8104c0e9ae3247decc96daacb"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\model-feature.stderr.log",
+      "path": "verification/acceptance-r1/model-feature.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\model-feature.stdout.log",
+      "path": "verification/acceptance-r1/model-feature.stdout.log",
+      "sha256": "98a397e9bd5a133c9a4b8fd6a49e21ee66b4e8ebbe8f7966e059ff124fe271b7"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\offline-package.json",
+      "path": "verification/acceptance-r1/offline-package.json",
+      "sha256": "7bc8a7e853a2099bbff1da4e9d073b8528d1f2c004580785d4d715044ccaf582"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\offline-package.stderr.log",
+      "path": "verification/acceptance-r1/offline-package.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\offline-package.stdout.log",
+      "path": "verification/acceptance-r1/offline-package.stdout.log",
+      "sha256": "3fc3fa50c503111e0ca96bdbac6ff4b962b45472a4ffb049376377e3bddb7687"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\replay-proof.json",
+      "path": "verification/acceptance-r1/replay-proof.json",
+      "sha256": "469bddbc2e71934a645217a8b7458557b843d08f50744210830f08e9a266d1bb"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\reviewed-spec.json",
+      "path": "verification/acceptance-r1/reviewed-spec.json",
+      "sha256": "abefe2699474dde81e1bd03dc5031bf63b5ea305576071e1184bca9eb4cf6ba8"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\test_dkim_contract.py",
+      "path": "verification/acceptance-r1/test_dkim_contract.py",
+      "sha256": "2a4bb1b85a44eeec2bee8e77822db93d3301690fb9796d534b8bf8f38261604e"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r1\\test_dkim_exact_contract.py",
+      "path": "verification/acceptance-r1/test_dkim_exact_contract.py",
+      "sha256": "20b833b8801c39ab57b59f962bb84e94921d0d31e64a3b8ec4979ae96eb46d39"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\actual-import.json",
+      "path": "verification/acceptance-r2/actual-import.json",
+      "sha256": "33eaca45781540c29aad1d584acaf143a5814116bc3979830d54e473c7947e68"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\actual-import.stderr.log",
+      "path": "verification/acceptance-r2/actual-import.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\actual-import.stdout.log",
+      "path": "verification/acceptance-r2/actual-import.stdout.log",
+      "sha256": "37214a4bbef4a2554524111f49b87e93f9cceb8cc6b009e127e0ac90a32c9009"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\dependency-lock.json",
+      "path": "verification/acceptance-r2/dependency-lock.json",
+      "sha256": "628184122a32b25b45fc022fd5aebb0feb70071ac11cf54258a1b5d94be9d44c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\dependency-lock.stderr.log",
+      "path": "verification/acceptance-r2/dependency-lock.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\dependency-lock.stdout.log",
+      "path": "verification/acceptance-r2/dependency-lock.stdout.log",
+      "sha256": "dd89a426e04c417e6f08e8046d087c2db03515c62b7ff3d16619c1148cbe7afd"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\display-contract.json",
+      "path": "verification/acceptance-r2/display-contract.json",
+      "sha256": "7967a91e9637d3f89786503cb7e88515bdc78d94bcbd32998d7cbe132f7aa083"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\display-contract.stderr.log",
+      "path": "verification/acceptance-r2/display-contract.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\display-contract.stdout.log",
+      "path": "verification/acceptance-r2/display-contract.stdout.log",
+      "sha256": "0b693d6699f9a15150bfd81dc8b8cebd9aef8a243672b8bc7c9523f0810cca07"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\dkim-display-fixtures.py",
+      "path": "verification/acceptance-r2/dkim-display-fixtures.py",
+      "sha256": "ef22b7262d88da1dd5fc74b583a9c364a49d1e1fb178c1d8411101ec24690069"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\dkim_api.py",
+      "path": "verification/acceptance-r2/dkim_api.py",
+      "sha256": "033731f0421255347e12b58c0b6780edbdb5605e3a47a38517924a7b15c7e4cb"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\exact-length-observation.json",
+      "path": "verification/acceptance-r2/exact-length-observation.json",
+      "sha256": "a00574fdf9ad3f34179f67187ca5a7a5fc18b70f65ad5e2f42506c457879d864"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\exact-length-observation.stderr.log",
+      "path": "verification/acceptance-r2/exact-length-observation.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\exact-length-observation.stdout.log",
+      "path": "verification/acceptance-r2/exact-length-observation.stdout.log",
+      "sha256": "a651278a9917904d6f674c8ff1e3da47694b08e5ff152d0fa3046f667f1951be"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\fixture-repair-review-r2.json",
+      "path": "verification/acceptance-r2/fixture-repair-review-r2.json",
+      "sha256": "14eccf19e184a0c2e2bbd2f0985366e7186f39ce79d4107b031f851827217b7f"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\mail-check.py",
+      "path": "verification/acceptance-r2/mail-check.py",
+      "sha256": "6917cad4665e6cecf0e4d76cb5c9823ec59c2114bc3f4f63b6e4aacfeb737781"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\model-feature.json",
+      "path": "verification/acceptance-r2/model-feature.json",
+      "sha256": "0e2b916b66423ec0db6c5f17e50fc4d22bf63a19c79a35171389644232151f18"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\model-feature.stderr.log",
+      "path": "verification/acceptance-r2/model-feature.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\model-feature.stdout.log",
+      "path": "verification/acceptance-r2/model-feature.stdout.log",
+      "sha256": "935cb650b29dde01bd0e28c2e270fd86839291b52ba707a8f53fa5f1512ad4fc"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\offline-package.json",
+      "path": "verification/acceptance-r2/offline-package.json",
+      "sha256": "579a8c4fb497497c4f517534aebaf141e55ef2b0082f8e63e93e460ecd294c62"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\offline-package.stderr.log",
+      "path": "verification/acceptance-r2/offline-package.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\offline-package.stdout.log",
+      "path": "verification/acceptance-r2/offline-package.stdout.log",
+      "sha256": "460204e593f88b0353de3fe78bbbc5440d38820c6764a46a7b259bc85cff097c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\replay-proof.json",
+      "path": "verification/acceptance-r2/replay-proof.json",
+      "sha256": "ef0f6432393591b0b874c459e353b1dab43149b5f675d046b7270f1b1af331dd"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\reproduction-notes.md",
+      "path": "verification/acceptance-r2/reproduction-notes.md",
+      "sha256": "fb8b0a0857a9a8dbe776a3665719ff1783039622f175ebd0ab160fc109f7ba7a"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\reviewed-spec.json",
+      "path": "verification/acceptance-r2/reviewed-spec.json",
+      "sha256": "3efec3f9759fb439423ded12f1986c47764c05be52e5f0ac601a76e6305e09c2"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\runtime-requirements.txt",
+      "path": "verification/acceptance-r2/runtime-requirements.txt",
+      "sha256": "e6520f66dda0ff28a5f762efa6c6657187903c66d9a7d5a657c5c13129e241e0"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\test_dkim_contract.py",
+      "path": "verification/acceptance-r2/test_dkim_contract.py",
+      "sha256": "2a4bb1b85a44eeec2bee8e77822db93d3301690fb9796d534b8bf8f38261604e"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\test_dkim_exact_contract.py",
+      "path": "verification/acceptance-r2/test_dkim_exact_contract.py",
+      "sha256": "55c22ce3fb552f195b3d9e127ce0756cfc33768ffabf39c399c5dca31d8968a7"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\recorded-runtime-r1\\actual-commands.json",
+      "path": "verification/recorded-runtime-r1/actual-commands.json",
+      "sha256": "40d39758e2beef75745091ccdf24bf6a6c6dca41dacb33e372a0b57818792a77"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\recorded-runtime-r1\\boundary-tests-output.log",
+      "path": "verification/recorded-runtime-r1/boundary-tests-output.log",
+      "sha256": "dd66f16063c82305866e48d0adb98a4a5c054d6c5c6245f008a0c13b9beab5f5"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\recorded-runtime-r1\\coverage-tests-output.log",
+      "path": "verification/recorded-runtime-r1/coverage-tests-output.log",
+      "sha256": "b41cd7ca4fcc8cbcca21901fad6414e8f2210d22d6dff9857b1688be36267cb8"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\recorded-runtime-r1\\mail-flow-output.log",
+      "path": "verification/recorded-runtime-r1/mail-flow-output.log",
+      "sha256": "1931afec51d46043e7877745c65634b9db77e28c530eadf9891bd83ef342f607"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\recorded-runtime-r1\\spec.json",
+      "path": "verification/recorded-runtime-r1/spec.json",
+      "sha256": "c097070cfec322cc7b514ce09b540be33ace939d506fcf0f0eedac3535d88c8e"
+    }
+  ],
+  "reproduction_readme": "Windows Python 3.14.3, pure Python project with cryptography/PyNaCl and DNS-library dependencies; no container or external runtime service. All validation uses generated RSA keys and an in-memory DNS callback. Build a fresh venv, install verification/acceptance-r2/runtime-requirements.txt, then install the exact product source with pip install --no-deps -e . . Do not copy the old editable baseline URL from raw pip freeze. Put the product root and verification/acceptance-r2 on PYTHONPATH; confirm dkim.__file__ points to the frozen source.\n\nRun python -B -m pytest -q -o addopts= -p no:cacheprovider --tb=short verification/acceptance-r2/test_dkim_contract.py verification/acceptance-r2/test_dkim_exact_contract.py. Frozen result: 16 pass, 3 fail. The three failures have two causes. A genuine valid signature with declared l=999 and a shorter complete canonical body is accepted even though the request requires exact l equality. This is an explicit display-policy mismatch, not a claim that these particular inputs contain unsigned appended bytes. Secondly a custom required-header list omitting From causes false rejection of an ordinary signed mail which actually contains exactly one From; _check_display_policy only counts From when it belongs to the caller list. Two list variants exercise the same root cause.\n\npython -B verification/acceptance-r2/test_dkim_exact_contract.py prints the cryptographic positive control and actual false strict acceptance. mail-check.py prints normal mail, rejected unsigned tails, independent weak/strong signatures, the false rejection and the oversized-l case. The first acceptance revision retained a faulty re-signing helper that omitted a CRLF after replacing b=; its ordinary verification assertion correctly failed before display-policy testing. Revision 2 adds the missing separator, does not edit product source, and uses a passing cryptographic control. That helper error is excluded from the score.\n\nThe model feature module has 22 pytest collected passes: 21 unittest test methods plus the test_suite helper, which yields a PytestReturnNotNoneWarning. Whole dkim/tests has 130 collected passes and 9 such warnings; feature results overlap the package suite and are not additive. The native python test.py reported 121 and a separate ARC suite of 2, so the final-answer wording calling 121 old tests plus 21 new tests should not be read as a sum of unique tests. Exact command output and scopes remain in the evidence. Recorded commands ran from this exact replay, continuously for 75 seconds with success and failures visible; the console runner is a separately authored verification helper.",
+  "no_model_source_edits": true,
+  "native_trace_included": false
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "mail-flow",
+    "argv": [
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\dkim\\env\\Scripts\\python.exe",
+      "-B",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\mail-check.py"
+    ],
+    "exit_code": 0,
+    "finished_at_seconds": 2.18
+  },
+  {
+    "id": "boundary-tests",
+    "argv": [
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\dkim\\env\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-o",
+      "addopts=",
+      "-p",
+      "no:cacheprovider",
+      "--tb=short",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\test_dkim_exact_contract.py",
+      "--basetemp",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\recording\\r1\\tmp-boundary"
+    ],
+    "exit_code": 1,
+    "finished_at_seconds": 23.69
+  },
+  {
+    "id": "coverage-tests",
+    "argv": [
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\tasks\\dkim\\env\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-o",
+      "addopts=",
+      "-p",
+      "no:cacheprovider",
+      "--tb=short",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\test_dkim_contract.py",
+      "--basetemp",
+      "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\recording\\r1\\tmp-coverage"
+    ],
+    "exit_code": 0,
+    "finished_at_seconds": 50.63
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "time": "2026-11-13T17:38:09+08:00",
+  "uid": 1745,
+  "status": "PASS",
+  "single_native_trace": "D:\\hc\\userFeedback\\cache\\runs\\uf-20261112-new15-dkim\\frozen\\trajectory-original.jsonl",
+  "trace_sha256": "a5b1fced0cdc6b534f53adcbe358a629dc5c6b40799101007cf1b5b2e562d98e",
+  "session_id": "2a3ffe7d-51b9-40e8-9f62-9b4d0ab19943",
+  "prompt_id": "e5fabb84-d179-4fe7-a446-f0634fb273a9",
+  "exact_single_prompt": true,
+  "native_models": [
+    "auto_model/urm"
+  ],
+  "native_efforts": [
+    "high"
+  ],
+  "three_explicit_high_settings": true,
+  "native_success": true,
+  "frozen_files_unchanged": true,
+  "private_reasoning_excluded": true,
+  "event_counts": {
+    "queue-operation": 2,
+    "user": 47,
+    "attachment": 47,
+    "atis-latch": 14,
+    "assistant": 112,
+    "last-prompt": 14,
+    "system": 2
+  }
+}

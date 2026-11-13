@@ -1,0 +1,37 @@
+{
+  "process": [
+    {
+      "native_lines": [
+        161,
+        188,
+        193,
+        195,
+        199,
+        204,
+        211,
+        233,
+        237
+      ],
+      "fact": "Added display tests and corrected malformed-signature handling, tested equal/short l and custom lists still including From, then claimed full completion. Oversized declared l and custom list without From were absent."
+    }
+  ],
+  "product": [
+    {
+      "file": "dkim/__init__.py",
+      "function": "_check_display_policy",
+      "fact": "existing only includes requested names; from_indices=existing.get(from,[]) falsely counts zero when From omitted; signed_body_length stores sliced/min length and compares only less-than rather than declared l equality."
+    }
+  ],
+  "requirements": {
+    "default_signature_body_and_header_instances": "test_dkim_contract.py",
+    "exact_l_and_custom_required": "test_dkim_exact_contract.py"
+  },
+  "helper_error_excluded": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\evaluation\\uf-20261112-new15-dkim\\verification\\acceptance-r2\\fixture-repair-review-r2.json",
+  "no_product_edits": true,
+  "diversity": "D:\\hc\\userFeedback\\cache\\execution-security-new11-20261112\\engineering\\remaining-four-20261113-r1\\prelaunch-gates.json",
+  "time": "2026-11-13T17:45:46+08:00",
+  "uid": 1745,
+  "frozen_commit": "c08fe7de0ce9d1bdc0addb92e6f8de9ff9465ac4",
+  "native_trace_sha256": "a5b1fced0cdc6b534f53adcbe358a629dc5c6b40799101007cf1b5b2e562d98e",
+  "no_model_source_changes_after_freeze": true
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\hc\userFeedback\cache\execution-security-new11-20261112\evaluation\uf-20261112-new15-dkim\verification\acceptance-r1/test_dkim_exact_contract.py", line 40, in <module>
+    message,dnsfunc=oversize_length_fixture();print({'ordinary_signature_valid':dkim.verify(message,dnsfunc=dnsfunc),'declared_l':999,'strict_result':review(message,dnsfunc=dnsfunc)})
+                    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\hc\userFeedback\cache\execution-security-new11-20261112\evaluation\uf-20261112-new15-dkim\verification\acceptance-r1/test_dkim_exact_contract.py", line 24, in oversize_length_fixture
+    assert dkim.verify(signed,dnsfunc=dnsfunc),'Cryptographic control must pass before testing display policy'
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cryptographic control must pass before testing display policy
