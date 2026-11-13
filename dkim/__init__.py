@@ -96,6 +96,7 @@ __all__ = [
     "ARC",
     "sign",
     "verify",
+    "verify_for_display",
     "dkim_sign",
     "dkim_verify",
     "arc_sign",
@@ -194,7 +195,28 @@ def select_headers(headers, include_headers):
     >>> select_headers(h,i)
     [('From', 'biz'), ('Subject', 'Boring')]
     """
+    sign_headers, sign_indices = select_headers_with_indices(headers, include_headers)
+    return sign_headers
+
+
+def select_headers_with_indices(headers, include_headers):
+    """Select message header fields to be signed/verified.
+
+    Like L{select_headers}, but also returns the index of every selected
+    header in the original headers list, in the order the instances are
+    fed to the digest (RFC 6376 section 3.7: repeated h= names pick
+    instances from bottom to top).  h= entries that name a header field
+    with no existing instance (oversigning of absent fields) match
+    nothing, so they can never produce a phantom index claiming
+    coverage that does not exist.
+
+    >>> h = [('from','biz'),('foo','bar'),('from','baz'),('subject','boring')]
+    >>> i = ['from','subject','to','from']
+    >>> select_headers_with_indices(h,i)
+    ([('from', 'baz'), ('subject', 'boring'), ('from', 'biz')], [2, 3, 0])
+    """
     sign_headers = []
+    sign_indices = []
     lastindex = {}
     for h in include_headers:
         assert h == h.lower()
@@ -203,9 +225,10 @@ def select_headers(headers, include_headers):
             i -= 1
             if h == headers[i][0].lower():
                 sign_headers.append(headers[i])
+                sign_indices.append(i)
                 break
         lastindex[h] = i
-    return sign_headers
+    return sign_headers, sign_indices
 
 
 # FWS  =  ([*WSP CRLF] 1*WSP) /  obs-FWS ; Folding white space  [RFC5322]
@@ -215,8 +238,13 @@ RE_BTAG = re.compile(br'([;\s]b'+FWS+br'=)(?:'+FWS+br'[a-zA-Z0-9+/=])*(?:\r?\n\Z
 
 def hash_headers(hasher, canonicalize_headers, headers, include_headers,
                  sigheader, sig):
-    """Update hash for signed message header fields."""
-    sign_headers = select_headers(headers,include_headers)
+    """Update hash for signed message header fields.
+
+    Returns a tuple of (sign_headers, sign_indices), where sign_indices
+    are the positions of the selected headers in the original headers
+    list, in digest order.
+    """
+    sign_headers, sign_indices = select_headers_with_indices(headers,include_headers)
     # The call to _remove() assumes that the signature b= only appears
     # once in the signature header
     cheaders = canonicalize_headers.canonicalize_headers(
@@ -227,14 +255,14 @@ def hash_headers(hasher, canonicalize_headers, headers, include_headers,
         hasher.update(x)
         hasher.update(b":")
         hasher.update(y)
-    return sign_headers
+    return sign_headers, sign_indices
 
 
 def hash_headers_ed25519(pk, canonicalize_headers, headers, include_headers,
                  sigheader, sig):
     """Update hash for signed message header fields."""
     hash_header = ''
-    sign_headers = select_headers(headers,include_headers)
+    sign_headers, sign_indices = select_headers_with_indices(headers,include_headers)
     # The call to _remove() assumes that the signature b= only appears
     # once in the signature header
     cheaders = canonicalize_headers.canonicalize_headers(
@@ -243,7 +271,7 @@ def hash_headers_ed25519(pk, canonicalize_headers, headers, include_headers,
     # canonicalization algorithm would add one.
     for x,y in sign_headers + [(x, y.rstrip()) for x,y in cheaders]:
         hash_header += x + y
-    return sign_headers, hash_header
+    return sign_headers, sign_indices, hash_header
 
 
 def validate_signature_fields(sig, mandatory_fields=[b'v', b'a', b'b', b'bh', b'd', b'h', b's'], arc=False):
@@ -604,6 +632,15 @@ class DomainSigner(object):
     #: is a name,value tuple.  FIXME: The headers are canonicalized.
     #: This could be more useful as original headers.
     self.signed_headers = []
+    #: The indices into self.headers of the headers last signed or
+    #: verified, in the order they were fed to the digest.
+    self.signed_header_indices = []
+    #: Length in bytes of the canonicalized body and of the body
+    #: prefix actually covered by the last verified signature's
+    #: body hash (shorter than the full body only when l= is present
+    #: and does not cover the whole body).
+    self.canonical_body_length = 0
+    self.signed_body_length = 0
     #: The public key size last verified.
     self.keysize = 0
 
@@ -647,7 +684,7 @@ class DomainSigner(object):
     sig = dict(fields)
 
     headers = canon_policy.canonicalize_headers(self.headers)
-    self.signed_headers = hash_headers(
+    self.signed_headers, self.signed_header_indices = hash_headers(
         h, canon_policy, headers, include_headers, header, sig)
     if self.debug_content:
         self.logger.debug("sign %s headers: %r" % (header_name, h.hashed()))
@@ -706,9 +743,15 @@ class DomainSigner(object):
     if b'bh' in sig:
       h = HashThrough(hasher(), self.debug_content)
 
-      body = canon_policy.canonicalize_body(self.body)
+      canon_body = canon_policy.canonicalize_body(self.body)
+      # Record how much of the canonicalized body exists versus how
+      # much the signature actually hashed (a subset only when l= is
+      # present).  Display policy can then refuse a prefix-only l=.
+      self.canonical_body_length = len(canon_body)
+      body = canon_body
       if b'l' in sig and not self.tlsrpt:
         body = body[:int(sig[b'l'])]
+      self.signed_body_length = len(body)
       h.update(body)
       if self.debug_content:
           self.logger.debug("body hashed: %r" % h.hashed())
@@ -733,7 +776,7 @@ class DomainSigner(object):
     h = HashThrough(hasher(), self.debug_content)
 
     headers = canon_policy.canonicalize_headers(self.headers)
-    self.signed_headers = hash_headers(
+    self.signed_headers, self.signed_header_indices = hash_headers(
         h, canon_policy, headers, include_headers, sig_header, sig)
     if self.debug_content:
         self.logger.debug("signed for %s: %r" % (sig_header[0], h.hashed()))
@@ -900,6 +943,172 @@ class DKIM(DomainSigner):
     self.include_headers = tuple(include_headers)
 
     return self.verify_sig(sig, include_headers, sigheaders[idx], dnsfunc)
+
+  #: Strictly verify that every header field a display layer shows (by
+  #: default From, Subject and To), plus the whole body, is covered by a
+  #: cryptographically valid DKIM signature.
+  #:
+  #: This is not a DMARC or sender-reputation decision: it only answers
+  #: "is every byte of the displayed content inside a validated DKIM
+  #: signature?".  A signature that merely validates (dkim.verify) is
+  #: not enough, since its h= may omit displayed header fields or only
+  #: cover a body prefix through l=.
+  #:
+  #: Each DKIM-Signature is evaluated independently; a result is passed
+  #: only when both the cryptographic check and the display policy pass
+  #: for the same signature.  State left by an earlier weak or failing
+  #: signature (e.g. self.signed_headers) is never reused for a later one.
+  #:
+  #: @type required_headers: iterable
+  #: @param required_headers: header field names (bytes or str) that
+  #: must be fully protected.  Matching is case-insensitive.  Defaults
+  #: to (b'from', b'subject', b'to').
+  #: @type dnsfunc: callable
+  #: @param dnsfunc: function to lookup TXT resource records for the
+  #: public key; supply an in-memory callback to avoid network access.
+  #: @return: list of result dicts, one per DKIM-Signature in message
+  #: order (topmost signature is index 0), each containing:
+  #:  - 'result': bool, display policy passed and signature valid
+  #:  - 'signature_index': position of the DKIM-Signature header
+  #:  - 'domain' (d=), 'selector' (s=)
+  #:  - 'signed_header_indices': indices into the original message
+  #:    headers of the instances actually fed to the digest, in
+  #:    digest order (empty if the signature could not be processed)
+  #:  - 'reason': human-readable pass/reject explanation
+  #:  - 'cryptographic_result': bool/None, raw verify_sig outcome
+  #:  - 'body_fully_covered': whether the whole canonicalized body was
+  #:    hashed (False for a prefix-only l=, None if not evaluated)
+  #: @raise DKIMException: only for malformed input that cannot be
+  #: attributed to a specific signature evaluation.
+  def verify_for_display(self, required_headers=(b'from', b'subject', b'to'),
+                         dnsfunc=get_txt):
+    required = []
+    for name in required_headers:
+      if isinstance(name, str):
+        name = name.encode('utf-8')
+      required.append(name.lower())
+
+    sigheaders = [(x, y) for x, y in self.headers
+                  if x.lower() == b"dkim-signature"]
+
+    results = []
+    for idx, sigheader in enumerate(sigheaders):
+      result = {
+        'result': False,
+        'signature_index': idx,
+        'domain': None,
+        'selector': None,
+        'signed_header_indices': [],
+        'reason': '',
+        'cryptographic_result': None,
+        'body_fully_covered': None,
+      }
+      # Per-signature state so a failed/weak earlier signature cannot
+      # leave signed_headers/body lengths that endorse a later one.
+      self.signed_headers = []
+      self.signed_header_indices = []
+      self.canonical_body_length = 0
+      self.signed_body_length = 0
+
+      try:
+        try:
+          sig = parse_tag_value(sigheader[1])
+        except InvalidTagValueList as e:
+          raise MessageFormatError(e)
+        self.signature_fields = sig
+        validate_signature_fields(sig)
+        self.domain = sig[b'd']
+        self.selector = sig[b's']
+        result['domain'] = sig[b'd']
+        result['selector'] = sig[b's']
+
+        include_headers = [x.lower()
+                           for x in re.split(br"\s*:\s*", sig[b'h'])]
+        self.include_headers = tuple(include_headers)
+
+        crypto_ok = self.verify_sig(
+            sig, list(include_headers), sigheader, dnsfunc)
+      except DKIMException as e:
+        result['reason'] = "signature rejected: %s" % e
+        results.append(result)
+        continue
+
+      result['cryptographic_result'] = bool(crypto_ok)
+      # verify_sig repopulated these for this signature only.
+      result['signed_header_indices'] = list(self.signed_header_indices)
+      result['body_fully_covered'] = (
+          self.signed_body_length >= self.canonical_body_length)
+
+      if not crypto_ok:
+        result['reason'] = "cryptographic verification failed"
+        results.append(result)
+        continue
+
+      policy_reason = self._check_display_policy(
+          sig, include_headers, required)
+      if policy_reason is None:
+        result['result'] = True
+        result['reason'] = (
+            "signature valid and all required header instances and the "
+            "complete body are covered")
+      else:
+        result['reason'] = policy_reason
+      results.append(result)
+
+    return results
+
+  def _check_display_policy(self, sig, include_headers, required):
+    """Return None if the display policy passes, else a reject reason.
+
+    Strict rules:
+      * exactly one From header field instance must exist;
+      * every required header name must have at least one instance;
+      * every existing instance of every required name must have been
+        selected into the digest (oversigning entries with no actual
+        instance are inert and cannot fake coverage);
+      * an l= tag is acceptable only when it covers the whole
+        canonicalized body.
+    """
+    # Map required name -> all original header indices, in message
+    # order.  Indices are into self.headers (0-based, top to bottom).
+    existing = {}
+    for name in required:
+      existing[name] = [i for i, (hn, hv) in enumerate(self.headers)
+                        if hn.lower() == name]
+
+    from_indices = existing.get(b'from', [])
+    if len(from_indices) != 1:
+      return ("display policy rejected: From header field must occur "
+              "exactly once, found %d instance(s)" % len(from_indices))
+
+    # Re-derive the selected instances straight from h= and the
+    # original headers rather than trusting self.signed_headers, so
+    # coverage is judged on actual instances, not on names listed in
+    # h=.  Names without an instance (oversigning) select nothing.
+    _, selected = select_headers_with_indices(
+        self.headers, include_headers)
+
+    for name in required:
+      indices = existing[name]
+      if len(indices) == 0:
+        return ("display policy rejected: required header %r is missing "
+                "from the message" % name)
+      selected_for_name = sorted(
+          i for i in selected if self.headers[i][0].lower() == name)
+      if selected_for_name != sorted(indices):
+        return (
+            "display policy rejected: not every existing instance of "
+            "header %r is signed (existing indices %s, signed indices "
+            "%s)" % (name, sorted(indices), selected_for_name))
+
+    if self.signed_body_length < self.canonical_body_length:
+      return (
+          "display policy rejected: l=%s covers only %d of %d "
+          "canonicalized body bytes; unsigned body tail present"
+          % (sig.get(b'l', b'absent'), self.signed_body_length,
+             self.canonical_body_length))
+
+    return None
 
 
 #: Hold messages and options during ARC signing and verification.
@@ -1314,6 +1523,47 @@ def verify(message, logger=None, dnsfunc=get_txt, minkey=1024, timeout=5, tlsrpt
         if logger is not None:
             logger.error("%s" % x)
         return False
+
+
+def verify_for_display(message, required_headers=(b'from', b'subject', b'to'),
+                       logger=None, dnsfunc=get_txt, minkey=1024, timeout=5,
+                       tlsrpt=False):
+    """Strict display-layer verification of every DKIM signature on a message.
+
+    Unlike L{verify}, which returns True as soon as one signature is
+    cryptographically valid, this checks each signature separately and
+    passes one only when it is both cryptographically valid and covers
+    every existing instance of each required header field plus the
+    complete canonicalized body.  It makes no DMARC or sender
+    reputation judgement.
+
+    @param message: an RFC822 formatted message (with either \\n or \\r\\n line endings)
+    @param required_headers: header field names that must be fully
+    protected (case-insensitive bytes or str); defaults to From,
+    Subject, To.
+    @param dnsfunc: function to lookup TXT resource records; pass an
+    in-memory callback to avoid network access.
+    @return: list of result dicts as produced by
+    L{DKIM.verify_for_display}, one per DKIM-Signature.
+    """
+    d = DKIM(message, logger=logger, minkey=minkey, timeout=timeout,
+             tlsrpt=tlsrpt)
+    try:
+        return d.verify_for_display(
+            required_headers=required_headers, dnsfunc=dnsfunc)
+    except DKIMException as x:
+        if logger is not None:
+            logger.error("%s" % x)
+        return [{
+            'result': False,
+            'signature_index': 0,
+            'domain': None,
+            'selector': None,
+            'signed_header_indices': [],
+            'reason': "verification aborted: %s" % x,
+            'cryptographic_result': None,
+            'body_fully_covered': None,
+        }]
 
 # For consistency with ARC
 dkim_sign = sign
